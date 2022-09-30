@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
-import { NavLink } from 'react-router-dom';
 import {
   mediaTablet,
   mediaDesktop,
 } from '../../functions/media';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 export const NavigationContainer = styled.nav`
   margin-top: 16px;
@@ -16,7 +16,7 @@ export const NavigationList = styled.ul`
   display: flex;
 `;
 
-export const Link = styled(NavLink)`
+export const Link = styled(AnchorLink)`
   color: ${props => props.theme.fontColors.secondary};
   text-decoration: none;
   position: relative;

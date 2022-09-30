@@ -10,7 +10,7 @@ import { CasesImgList } from './CasesImgList';
 export function Cases() {
   return (
     <Container>
-      <CasesContainer>
+      <CasesContainer id="cases">
         <CasesQuestion>This is what we do</CasesQuestion>
         <CasesTitle>Business Cases</CasesTitle>
         <CasesDesc>

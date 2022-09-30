@@ -5,10 +5,6 @@ import {
   mediaDesktop,
 } from '../../functions/media';
 
-// const setFilledName = ({ filledName }) => {
-//     return filledName ? "-24px" : "14px";
-//   };
-
 export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -32,9 +28,14 @@ export const InputContainer = styled.div`
   margin-bottom: 20px;
   display: flex;
   position: relative;
+  transition: ${props => props.theme.transitions.primary};
   ${mediaDesktop(` 
   margin-bottom: 25px;
  `)}
+  .filled {
+    top: -20px;
+    ${mediaTablet(` top: -24px;`)}
+  }
 `;
 export const LabelStyled = styled.label`
   position: absolute;
@@ -65,11 +66,6 @@ export const InputStyled = styled(Field)`
       ${mediaTablet(` top: -24px;`)}
     }
   }
-  //   &:valid {
-  //     + label {
-  //         top: -24px;
-  //        }
-  //   }
 `;
 
 export const Error = styled.p`

@@ -31,7 +31,7 @@ export function Blog() {
           />
         )}
       </div>
-      <BlogTextContainer>
+      <BlogTextContainer id="blog">
         <div>
           <BlogTextDate>April 16 2020</BlogTextDate>
           <BlogTextTitle>Blog Post One</BlogTextTitle>

@@ -11,7 +11,7 @@ import {
 export function Hero() {
   return (
     <Container>
-      <section>
+      <section id="home">
         <HeroContainer>
           <HeroTitle>The Sky Is The Limit</HeroTitle>
           <HeroDesc>

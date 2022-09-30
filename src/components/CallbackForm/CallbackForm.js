@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Formik, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import {
@@ -11,21 +11,14 @@ import {
   FormBtn,
 } from './CallbackForm.styled';
 import sprite from '../../styles/assets/icons/icon-sprite.svg';
+import { BasicModal } from '../Modal';
 
 export const CallbackForm = () => {
-  // const [name, setName] = useState('');
-  // const [email, setEmail] = useState('');
-  // const [filledName, setFilledName] = useState(false);
-  // const [filledMail, setFilledMail] = useState(false);
-
-  // useEffect(() => {
-  //     if(name.length > 0) {
-  //         setFilledName(true)
-  //     }
-  //     if(email.length > 0) {
-  //         setFilledMail(true)
-  //     }
-  // }, [name, email])
+  const [nameValue, setNameValue] = useState('');
+  const [mailValue, setMailValue] = useState('');
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
     <FormContainer>
@@ -43,66 +36,88 @@ export const CallbackForm = () => {
         })}
         onSubmit={values => {
           console.log(values);
+          handleOpen();
         }}
       >
-        <Form>
-          <InputContainer>
-            <InputStyled
-              id="name"
-              name="name"
-              type="text"
-            />
-            <LabelStyled htmlFor="name">
-              Enter your name
-            </LabelStyled>
-            <ErrorMessage
-              name="name"
-              render={msg => (
-                <Error>
-                  <svg
-                    width="14"
-                    height="14"
-                    fill="#f0000f"
-                  >
-                    <use
-                      href={`${sprite}#icon-worning`}
-                    ></use>
-                  </svg>
-                  {msg}
-                </Error>
-              )}
-            />
-          </InputContainer>
-          <InputContainer>
-            <InputStyled
-              id="mail"
-              name="mail"
-              type="email"
-            />
-            <LabelStyled htmlFor="mail">
-              Enter email*
-            </LabelStyled>
-            <ErrorMessage
-              name="mail"
-              render={msg => (
-                <Error>
-                  <svg
-                    width="14"
-                    height="14"
-                    fill="#f0000f"
-                  >
-                    <use
-                      href={`${sprite}#icon-worning`}
-                    ></use>
-                  </svg>
-                  {msg}
-                </Error>
-              )}
-            />
-          </InputContainer>
-          <FormBtn type="submit">Send</FormBtn>
-        </Form>
+        {({ setFieldValue }) => {
+          return (
+            <Form>
+              <InputContainer>
+                <InputStyled
+                  id="name"
+                  name="name"
+                  type="text"
+                  value={nameValue}
+                  onChange={e => {
+                    setFieldValue('name', e.target.value);
+                    setNameValue(e.target.value);
+                  }}
+                />
+                <LabelStyled
+                  htmlFor="name"
+                  className={nameValue && 'filled'}
+                >
+                  Enter your name
+                </LabelStyled>
+                <ErrorMessage
+                  name="name"
+                  render={msg => (
+                    <Error>
+                      <svg
+                        width="14"
+                        height="14"
+                        fill="#f0000f"
+                      >
+                        <use
+                          href={`${sprite}#icon-worning`}
+                        ></use>
+                      </svg>
+                      {msg}
+                    </Error>
+                  )}
+                />
+              </InputContainer>
+              <InputContainer>
+                <InputStyled
+                  id="mail"
+                  name="mail"
+                  type="email"
+                  value={mailValue}
+                  onChange={e => {
+                    setFieldValue('mail', e.target.value);
+                    setMailValue(e.target.value);
+                  }}
+                />
+                <LabelStyled
+                  htmlFor="mail"
+                  className={mailValue && 'filled'}
+                >
+                  Enter email*
+                </LabelStyled>
+                <ErrorMessage
+                  name="mail"
+                  render={msg => (
+                    <Error>
+                      <svg
+                        width="14"
+                        height="14"
+                        fill="#f0000f"
+                      >
+                        <use
+                          href={`${sprite}#icon-worning`}
+                        ></use>
+                      </svg>
+                      {msg}
+                    </Error>
+                  )}
+                />
+              </InputContainer>
+              <FormBtn type="submit">Send</FormBtn>
+            </Form>
+          );
+        }}
       </Formik>
+      <BasicModal open={open} handleClose={handleClose} />
     </FormContainer>
   );
 };

@@ -9,6 +9,11 @@ export function CasesImgList() {
   const [isOpen, setIsOpen] = useState(false);
   const [imageIdx, setImageIdx] = useState(0);
 
+  const openImg = idx => {
+    setIsOpen(true);
+    setImageIdx(idx);
+  };
+
   return (
     <Grid
       justifyContent="center"
@@ -20,10 +25,10 @@ export function CasesImgList() {
         ({ img, imgWebp, img2, imgWebp2, alt, id }) => (
           <Grid
             item
-            sm={8}
+            sm={10}
             md={4}
             key={id}
-            onClick={() => setIsOpen(true)}
+            onClick={() => openImg(id)}
           >
             <ImgFormat
               img={img}

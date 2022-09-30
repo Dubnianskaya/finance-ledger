@@ -12,7 +12,7 @@ export const HeaderStyled = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 5;
+  z-index: 10;
   ${mediaTablet(`
     padding: 16px 0;
   `)}

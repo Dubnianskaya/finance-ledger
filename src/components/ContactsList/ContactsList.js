@@ -6,7 +6,7 @@ import {
 } from './ContactsList.styled';
 import sprite from '../../styles/assets/icons/icon-sprite.svg';
 
-export function ContactList() {
+export function ContactList({ teamStyled = false }) {
   return (
     <ContactsList>
       <Icons>
@@ -14,6 +14,7 @@ export function ContactList() {
           href="https://www.facebook.com/"
           target="_blank"
           rel="noreferrer"
+          isTeamStyles={teamStyled}
         >
           <FacebookIcon
             width="35"
@@ -31,6 +32,7 @@ export function ContactList() {
           href="https://twitter.com/"
           target="_blank"
           rel="noreferrer"
+          isTeamStyles={teamStyled}
         >
           <svg width="35" height="35" fill="#FFFFFF">
             <use href={`${sprite}#icon-twitter`}></use>
@@ -42,6 +44,7 @@ export function ContactList() {
           href="https://www.youtube.com/"
           target="_blank"
           rel="noreferrer"
+          isTeamStyles={teamStyled}
         >
           <svg width="35" height="35" fill="#FFFFFF">
             <use href={`${sprite}#icon-youtube`}></use>
@@ -53,6 +56,7 @@ export function ContactList() {
           href="https://www.linkedin.com/"
           target="_blank"
           rel="noreferrer"
+          isTeamStyles={teamStyled}
         >
           <svg width="35" height="35" fill="#FFFFFF">
             <use href={`${sprite}#icon-linkedin`}></use>

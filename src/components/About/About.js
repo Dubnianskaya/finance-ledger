@@ -31,7 +31,7 @@ export function About() {
           />
         )}
       </div>
-      <AboutTextContainer>
+      <AboutTextContainer id="about">
         <div>
           <AboutTextQuestion>
             What you are looking for

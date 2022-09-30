@@ -16,10 +16,16 @@ padding: 80px 0 88px 0;
 `;
 export const TeamListItem = styled.div`
   cursor: pointer;
+  transition: ${props => props.theme.transitions.primary};
   &:hover,
   &:focus {
+    img {
+      box-shadow: 2px 2px 12px 2px rgba(0, 0, 0, 0.4);
+      transform: scale(1.01);
+    }
     .hovered {
       opacity: 1;
+      + 
     }
   }
 `;
@@ -30,6 +36,7 @@ export const TeamListImgContainer = styled.div`
 
 export const TeamListHoverContainer = styled.div`
   opacity: 0;
+  z-index: 5;
   position: absolute;
   background: rgba(0, 0, 0, 0.5);
   width: 100%;

@@ -9,19 +9,29 @@ export function Navigation() {
     <NavigationContainer>
       <NavigationList>
         <li>
-          <Link to="/">Home</Link>
+          <Link offset="200" href="#home">
+            Home
+          </Link>
         </li>
         <li>
-          <Link to="/">About</Link>
+          <Link offset="100" href="#about">
+            About
+          </Link>
         </li>
         <li>
-          <Link to="/">Cases</Link>
+          <Link offset="0" href="#cases">
+            Cases
+          </Link>
         </li>
         <li>
-          <Link to="/">Blog</Link>
+          <Link offset="100" href="#blog">
+            Blog
+          </Link>
         </li>
         <li>
-          <Link to="/">Contact</Link>
+          <Link offset="100" href="#contact">
+            Contact
+          </Link>
         </li>
       </NavigationList>
     </NavigationContainer>

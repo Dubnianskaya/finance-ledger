@@ -1,5 +1,11 @@
 import styled from '@emotion/styled';
 
+const setHoverStyles = ({ isTeamStyles }) => {
+  return isTeamStyles
+    ? 'rgba(255,255,255, 0.8)'
+    : '#28A745';
+};
+
 export const ContactsList = styled.ul`
   display: flex;
   justify-content: center;
@@ -9,8 +15,7 @@ export const IconLink = styled.a`
   &:hover,
   &:focus {
     svg {
-      fill: ${props =>
-        props.theme.backgrounds.buttonPrimary};
+      fill: ${setHoverStyles};
     }
   }
 `;

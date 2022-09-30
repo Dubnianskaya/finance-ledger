@@ -30,11 +30,11 @@ export function TeamList() {
       rowSpacing={{ sm: 1, md: 2 }}
       columnSpacing={{ sm: 1, md: 2 }}
     >
-      <Grid item sm={8} md={4}>
+      <Grid item sm={10} md={4}>
         <TeamListItem>
           <TeamListImgContainer>
             <TeamListHoverContainer className="hovered">
-              <ContactList />
+              <ContactList teamStyled={true} />
             </TeamListHoverContainer>
             <ImgFormat
               img={johnDoe}
@@ -50,11 +50,11 @@ export function TeamList() {
           </TeamDataContainer>
         </TeamListItem>
       </Grid>
-      <Grid item sm={8} md={4}>
+      <Grid item sm={10} md={4}>
         <TeamListItem>
           <TeamListImgContainer>
             <TeamListHoverContainer className="hovered">
-              <ContactList />
+              <ContactList teamStyled={true} />
             </TeamListHoverContainer>
             <ImgFormat
               img={janeDoe}
@@ -72,11 +72,11 @@ export function TeamList() {
           </TeamDataContainer>
         </TeamListItem>
       </Grid>
-      <Grid item sm={8} md={4}>
+      <Grid item sm={10} md={4}>
         <TeamListItem>
           <TeamListImgContainer>
             <TeamListHoverContainer className="hovered">
-              <ContactList />
+              <ContactList teamStyled={true} />
             </TeamListHoverContainer>
             <ImgFormat
               img={steveSmith}
