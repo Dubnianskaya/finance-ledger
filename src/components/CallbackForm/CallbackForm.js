@@ -37,11 +37,18 @@ export const CallbackForm = () => {
         onSubmit={values => {
           console.log(values);
           handleOpen();
+          setNameValue('');
+          setMailValue('');
         }}
       >
         {({ setFieldValue }) => {
           return (
-            <Form>
+            <Form name="contact" method="post">
+              <input
+                type="hidden"
+                name="form-name"
+                value="contact"
+              />
               <InputContainer>
                 <InputStyled
                   id="name"
